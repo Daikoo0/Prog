@@ -14,6 +14,10 @@ public abstract class Peces {
     
     // Funciones //
     
+    public abstract void Mover();
+    public abstract void Comer();
+    public abstract void Reproducir();
+    public abstract void Muerte();
     
        
 }
