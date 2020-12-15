@@ -6,10 +6,10 @@ public class Pulpo extends Peces{
         Nombre = "Pulpo";
         Depredar = 3;
         Especie = 3;
-        AlimentacionMin = 0;
-        AlimentacionMax = 0;
-        Reproduccion = 0;
-        EsperanzaVida = 0;
+        AlimentacionMin = 10;
+        AlimentacionMax = 35;
+        Reproduccion = 180;
+        EsperanzaVida = 360;
     }
     
 }
