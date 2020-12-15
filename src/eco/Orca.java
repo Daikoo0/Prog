@@ -6,10 +6,10 @@ public class Orca extends Peces {
     public Orca(){
         Nombre = "Orca";
         Depredar = 6;
-        Especie = 3;
+        Especie = 6;
         AlimentacionMin = 20;
         AlimentacionMax = 30;
-        Reproduccion = 0;
-        EsperanzaVida = 0;
+        Reproduccion = 240;
+        EsperanzaVida = 300;
     }
 }
