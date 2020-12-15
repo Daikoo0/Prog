@@ -2,9 +2,9 @@
 package eco;
 
 
-public class Orca {
-    public Pulpo(){
-        Nombre = "Pulpo";
+public class Orca extends Peces {
+    public Orca(){
+        Nombre = "Orca";
         Depredar = 3;
         Especie = 3;
         AlimentacionMin = 0;
