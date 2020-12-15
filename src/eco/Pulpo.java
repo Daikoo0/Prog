@@ -9,6 +9,7 @@ public class Pulpo extends Peces{
         AlimentacionMin = 0;
         AlimentacionMax = 0;
         Reproduccion = 0;
+        EsperanzaVida = 0;
     }
     
 }

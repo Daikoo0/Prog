@@ -5,10 +5,11 @@ package eco;
 public class Orca extends Peces {
     public Orca(){
         Nombre = "Orca";
-        Depredar = 3;
+        Depredar = 6;
         Especie = 3;
-        AlimentacionMin = 0;
-        AlimentacionMax = 0;
+        AlimentacionMin = 20;
+        AlimentacionMax = 30;
         Reproduccion = 0;
+        EsperanzaVida = 0;
     }
 }

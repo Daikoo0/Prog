@@ -10,5 +10,6 @@ public class Krill extends Peces {
         AlimentacionMin = 0;
         AlimentacionMax = 0;
         Reproduccion = 0;
+        EsperanzaVida = 0;
     }
 }

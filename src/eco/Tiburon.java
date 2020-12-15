@@ -9,5 +9,6 @@ public class Tiburon extends Peces{
         AlimentacionMin = 0;
         AlimentacionMax = 0;
         Reproduccion = 0;
+        EsperanzaVida = 0;
     }
 }
