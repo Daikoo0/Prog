@@ -4,6 +4,7 @@ public class Pulpo extends Peces{
         
     public Pulpo(){
         Nombre = "Pulpo";
+        InicialN = "P";
         Depredar = 3;
         Especie = 3;
         AlimentacionMin = 10;
