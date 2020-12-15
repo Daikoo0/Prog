@@ -4,6 +4,7 @@ package eco;
 public class Tiburon extends Peces{
     public Tiburon(){
         Nombre = "Tiburon";
+        InicialN = "T";
         Depredar = 5;
         Especie = 5;
         AlimentacionMin = 15;
