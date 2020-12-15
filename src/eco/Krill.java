@@ -2,8 +2,8 @@
 package eco;
 
 
-public class Krill {
-    public Pulpo(){
+public class Krill extends Peces {
+    public Krill(){
         Nombre = "Pulpo";
         Depredar = 3;
         Especie = 3;
