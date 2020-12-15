@@ -4,12 +4,13 @@ public class Salmon extends Peces{
     
     public Salmon(){
         Nombre = "Salmon";
-        Depredar = 3;
-        Especie = 3;
-        AlimentacionMin = 0;
-        AlimentacionMax = 0;
-        Reproduccion = 0;
-        EsperanzaVida = 0;
+        InicialN = "S";
+        Depredar = 2;
+        Especie = 2;
+        AlimentacionMin = 10;
+        AlimentacionMax = 35;
+        Reproduccion = 180;
+        EsperanzaVida = 360;
     }
     
     /*public String GetNombre(){
