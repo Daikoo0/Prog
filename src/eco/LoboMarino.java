@@ -3,6 +3,7 @@ package eco;
 public class LoboMarino extends Peces {
     
     public LoboMarino(){
+        
         Nombre = "LoboMarino";
         InicialN = "L";
         Depredar = 4;
@@ -13,6 +14,22 @@ public class LoboMarino extends Peces {
         EsperanzaVida = 360;
         Vivo = true;
         
+    }
+    
+    @Override
+    public void Mover(){
+    }
+
+    @Override
+    public void Comer() {    
+    }
+
+    @Override
+    public void Reproducir() {
+    }
+
+    @Override
+    public void Muerte() {
     }
     
 }

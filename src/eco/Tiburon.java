@@ -1,8 +1,9 @@
 package eco;
 
-
 public class Tiburon extends Peces{
+    
     public Tiburon(){
+        
         Nombre = "Tiburon";
         InicialN = "T";
         Depredar = 5;
@@ -14,4 +15,21 @@ public class Tiburon extends Peces{
         Vivo = true;
         
     }
+    
+    @Override
+    public void Mover(){
+    }
+
+    @Override
+    public void Comer() {    
+    }
+
+    @Override
+    public void Reproducir() {
+    }
+
+    @Override
+    public void Muerte() {
+    }
+    
 }

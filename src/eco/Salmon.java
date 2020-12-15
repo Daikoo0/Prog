@@ -3,6 +3,7 @@ package eco;
 public class Salmon extends Peces{
     
     public Salmon(){
+        
         Nombre = "Salmon";
         InicialN = "S";
         Depredar = 2;
@@ -13,6 +14,22 @@ public class Salmon extends Peces{
         EsperanzaVida = 360;
         Vivo = true;
         
+    }
+    
+    @Override
+    public void Mover(){
+    }
+
+    @Override
+    public void Comer() {    
+    }
+
+    @Override
+    public void Reproducir() {
+    }
+
+    @Override
+    public void Muerte() {
     }
     
     /*public String GetNombre(){
