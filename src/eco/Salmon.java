@@ -11,6 +11,8 @@ public class Salmon extends Peces{
         AlimentacionMax = 35;
         Reproduccion = 180;
         EsperanzaVida = 360;
+        Vivo = true;
+        
     }
     
     /*public String GetNombre(){

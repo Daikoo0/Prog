@@ -11,5 +11,7 @@ public class Tiburon extends Peces{
         AlimentacionMax = 25;
         Reproduccion = 360;
         EsperanzaVida = 480;
+        Vivo = true;
+        
     }
 }

@@ -11,6 +11,8 @@ public class LoboMarino extends Peces {
         AlimentacionMax = 25;
         Reproduccion = 180;
         EsperanzaVida = 360;
+        Vivo = true;
+        
     }
     
 }

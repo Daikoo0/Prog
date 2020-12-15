@@ -10,5 +10,10 @@ public abstract class Peces {
     protected int AlimentacionMax;
     protected int Reproduccion;
     protected int EsperanzaVida;
+    protected boolean Vivo;
+    
+    // Funciones //
+    
+    
        
 }
