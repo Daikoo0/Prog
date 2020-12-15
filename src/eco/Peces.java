@@ -8,5 +8,6 @@ public abstract class Peces {
     protected int AlimentacionMin;
     protected int AlimentacionMax;
     protected int Reproduccion;
+    protected int EsperanzaVida;
        
 }
