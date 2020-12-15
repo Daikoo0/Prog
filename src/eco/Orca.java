@@ -12,7 +12,7 @@ public class Orca extends Peces {
         AlimentacionMax = 30;
         Reproduccion = 240;
         EsperanzaVida = 300;
-        Vivo = true
+        Vivo = true;
         
     }
 }
