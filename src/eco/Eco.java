@@ -30,11 +30,22 @@ public class Eco {
         System.out.println("////////////////////");
         
         for(Peces a : pescados){
-            System.out.print(a.Nombre);
+            
+            System.out.println(a.Nombre);
+          
+            
    
         }
         
+        System.out.println(pescados.get(0));
+        System.out.println(pescados.remove(2));
         System.out.println("////////////////////");
+        
+        for(Peces a : pescados){
+            
+            System.out.println(a.Nombre);
+   
+        }
         
     }
     
