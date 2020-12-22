@@ -5,6 +5,7 @@
  */
 package eco;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -117,10 +118,20 @@ public class Ventana extends javax.swing.JFrame {
                 OrquitaActionPerformed(evt);
             }
         });
+        Orquita.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                OrquitaKeyTyped(evt);
+            }
+        });
 
         Tiburoncito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TiburoncitoActionPerformed(evt);
+            }
+        });
+        Tiburoncito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TiburoncitoKeyTyped(evt);
             }
         });
 
@@ -129,10 +140,20 @@ public class Ventana extends javax.swing.JFrame {
                 LoboMarinitoActionPerformed(evt);
             }
         });
+        LoboMarinito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                LoboMarinitoKeyTyped(evt);
+            }
+        });
 
         dimension1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dimension1ActionPerformed(evt);
+            }
+        });
+        dimension1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                dimension1KeyTyped(evt);
             }
         });
 
@@ -141,10 +162,20 @@ public class Ventana extends javax.swing.JFrame {
                 SalmoncitoActionPerformed(evt);
             }
         });
+        Salmoncito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SalmoncitoKeyTyped(evt);
+            }
+        });
 
         Krillcito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KrillcitoActionPerformed(evt);
+            }
+        });
+        Krillcito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                KrillcitoKeyTyped(evt);
             }
         });
 
@@ -153,10 +184,20 @@ public class Ventana extends javax.swing.JFrame {
                 xdActionPerformed(evt);
             }
         });
+        xd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                xdKeyTyped(evt);
+            }
+        });
 
         Pulpito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PulpitoActionPerformed(evt);
+            }
+        });
+        Pulpito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PulpitoKeyTyped(evt);
             }
         });
 
@@ -179,6 +220,11 @@ public class Ventana extends javax.swing.JFrame {
         dimension2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dimension2ActionPerformed(evt);
+            }
+        });
+        dimension2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                dimension2KeyTyped(evt);
             }
         });
 
@@ -322,6 +368,115 @@ public class Ventana extends javax.swing.JFrame {
         matriz();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    // Validación de Datos //
+    
+    private void dimension1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dimension1KeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }    
+    }//GEN-LAST:event_dimension1KeyTyped
+
+    private void dimension2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dimension2KeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_dimension2KeyTyped
+
+    private void OrquitaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OrquitaKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_OrquitaKeyTyped
+
+    private void TiburoncitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TiburoncitoKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_TiburoncitoKeyTyped
+
+    private void LoboMarinitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoboMarinitoKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_LoboMarinitoKeyTyped
+
+    private void PulpitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PulpitoKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_PulpitoKeyTyped
+
+    private void SalmoncitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalmoncitoKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_SalmoncitoKeyTyped
+
+    private void KrillcitoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KrillcitoKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_KrillcitoKeyTyped
+
+    private void xdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_xdKeyTyped
+        
+        char validar = evt.getKeyChar();
+    
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
+        }  
+        
+    }//GEN-LAST:event_xdKeyTyped
 
     /**
      * @param args the command line arguments
