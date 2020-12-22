@@ -35,13 +35,13 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana() {
         
         initComponents();
-        margen = 50;
-        anchoTablero = 6;
-        altoTablero = 6;
-        iconSize = 64;
+        //margen = 50;
+        //anchoTablero = 6;
+        //altoTablero = 6;
+        //iconSize = 64;
         
         
-        //this.setSize(2*margen + anchoTablero*iconSize , 2*margen + altoTablero*iconSize);
+        /*this.setSize(2*margen + anchoTablero*iconSize , 2*margen + altoTablero*iconSize);
         
         tablero = new Eco(anchoTablero, altoTablero);
         etiquetas = new JLabel[anchoTablero][altoTablero];
@@ -51,7 +51,7 @@ public class Ventana extends javax.swing.JFrame {
                 etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));
                 etiquetas[i][j].setSize(iconSize, iconSize);
                 etiquetas[i][j].setLocation(margen + i*iconSize, margen + j*iconSize);
-                /*if (etiquetas[i][j].getText().equals("1")) {
+                if (etiquetas[i][j].getText().equals("1")) {
                     etiquetas[i][j].setIcon(jLabel1.getIcon());
                 } else if (etiquetas[i][j].getText().equals("2")) {
                     etiquetas[i][j].setIcon(jLabel2.getIcon());
@@ -63,14 +63,14 @@ public class Ventana extends javax.swing.JFrame {
                     etiquetas[i][j].setIcon(jLabel5.getIcon());
                 } else if (etiquetas[i][j].getText().equals("6")) {
                     etiquetas[i][j].setIcon(jLabel6.getIcon());
-                }*/
+                }
                 
                 //etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
                 etiquetas[i][j].setVisible(true);
             }
-        }
+        }*/
         
     }
 
@@ -189,38 +189,39 @@ public class Ventana extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(815, 815, 815)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(561, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pulpito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Krillcito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Tiburoncito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dimension2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(xd)
-                    .addComponent(Salmoncito)
-                    .addComponent(LoboMarinito)
-                    .addComponent(Orquita)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(71, 71, 71))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Pulpito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Krillcito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tiburoncito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dimension2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(xd)
+                            .addComponent(Salmoncito)
+                            .addComponent(LoboMarinito)
+                            .addComponent(Orquita)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(159, 159, 159))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,9 +264,9 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Krillcito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(xd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addComponent(jButton1)
-                .addGap(52, 52, 52))
+                .addGap(55, 55, 55))
         );
 
         pack();
@@ -309,15 +310,17 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ancho = Integer.parseInt(dimension1.getText());
-        largo = Integer.parseInt(dimension2.getText());
-        Orca = Integer.parseInt(Orquita.getText());
+        anchoTablero = Integer.parseInt(dimension1.getText());
+        altoTablero = Integer.parseInt(dimension2.getText());
+        /*Orca = Integer.parseInt(Orquita.getText());
         Tiburon = Integer.parseInt(Tiburoncito.getText());
         LoboMarino = Integer.parseInt(LoboMarinito.getText());
         Pulpo = Integer.parseInt(Pulpito.getText());
         Salmon = Integer.parseInt(Salmoncito.getText());
         Krill = Integer.parseInt(Krillcito.getText());
-        Actualizacion = Integer.parseInt(xd.getText());
+        Actualizacion = Integer.parseInt(xd.getText());*/
+        matriz();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -353,6 +356,43 @@ public class Ventana extends javax.swing.JFrame {
                 new Ventana().setVisible(true);
             }
         });
+    }
+    
+    public void matriz(){
+        
+        initComponents();
+        margen = 50;
+        iconSize = 64;
+        
+        tablero = new Eco(anchoTablero, altoTablero);
+        etiquetas = new JLabel[anchoTablero][altoTablero];
+        
+        for (int i = 0; i < anchoTablero; i++) {
+            for (int j = 0; j < altoTablero; j++) {
+                etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));
+                etiquetas[i][j].setSize(iconSize, iconSize);
+                etiquetas[i][j].setLocation(margen + i*iconSize, margen + j*iconSize);
+                /*if (etiquetas[i][j].getText().equals("1")) {
+                    etiquetas[i][j].setIcon(jLabel1.getIcon());
+                } else if (etiquetas[i][j].getText().equals("2")) {
+                    etiquetas[i][j].setIcon(jLabel2.getIcon());
+                } else if (etiquetas[i][j].getText().equals("3")) {
+                    etiquetas[i][j].setIcon(jLabel3.getIcon());
+                } else if (etiquetas[i][j].getText().equals("4")) {
+                    etiquetas[i][j].setIcon(jLabel4.getIcon());
+                } else if (etiquetas[i][j].getText().equals("5")) {
+                    etiquetas[i][j].setIcon(jLabel5.getIcon());
+                } else if (etiquetas[i][j].getText().equals("6")) {
+                    etiquetas[i][j].setIcon(jLabel6.getIcon());
+                }*/
+                
+                //etiquetas[i][j].setText("");
+               
+                this.add(etiquetas[i][j]);
+                etiquetas[i][j].setVisible(true);
+            }
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
