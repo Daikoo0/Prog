@@ -15,12 +15,12 @@ public class Ventana extends javax.swing.JFrame {
     /**
      * Creates new form Ventana
      */
-    private int margen;
-    private int anchoTablero;
-    private int altoTablero;
-    private int iconSize;
-    private Eco tablero;
-    private JLabel[][] etiquetas;
+    public int margen;
+    public int anchoTablero;
+    public int altoTablero;
+    public int iconSize;
+    public Eco tablero;
+    public JLabel[][] etiquetas;
     
     private int ancho;
     private int largo;
@@ -360,7 +360,6 @@ public class Ventana extends javax.swing.JFrame {
     
     public void matriz(){
         
-        initComponents();
         margen = 50;
         iconSize = 64;
         
@@ -392,6 +391,8 @@ public class Ventana extends javax.swing.JFrame {
                 etiquetas[i][j].setVisible(true);
             }
         }
+        
+        this.repaint();
         
     }
 
