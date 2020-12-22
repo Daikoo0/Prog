@@ -1,11 +1,35 @@
 package eco;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.util.Random;
+
 
 public class Eco {
-
-    public static void main(String[] args) {
-        int salmonsito;
+        
+    private int[][] valores;
+    
+    public Eco(int filas, int columnas){
+        
+        valores = new int[filas][columnas];
+        LlenarMatriz(6);
+        
+    }
+    
+    private void LlenarMatriz(int bound){
+        
+        Random r = new Random();
+        for (int i = 0; i < valores.length; i++) {
+            for (int j = 0; j < valores[0].length; j++) {
+                valores[i][j] = r.nextInt(bound);
+            }
+        }
+        
+    }
+    public int GetValue(int x, int y){
+        return valores[x][y];
+    }
+        
+}
+        /*int salmonsito;
         int pulpitos;
         int i;
         
@@ -47,6 +71,6 @@ public class Eco {
    
         }
         
-    }
+    }*/
     
-}
+
