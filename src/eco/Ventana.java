@@ -107,6 +107,7 @@ public class Ventana extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Empezar SImulación");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -119,6 +120,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         Orquita.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                OrquitaKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 OrquitaKeyTyped(evt);
             }
@@ -130,6 +134,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         Tiburoncito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TiburoncitoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TiburoncitoKeyTyped(evt);
             }
@@ -141,6 +148,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         LoboMarinito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                LoboMarinitoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 LoboMarinitoKeyTyped(evt);
             }
@@ -152,6 +162,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         dimension1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                dimension1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 dimension1KeyTyped(evt);
             }
@@ -163,6 +176,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         Salmoncito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SalmoncitoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 SalmoncitoKeyTyped(evt);
             }
@@ -174,6 +190,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         Krillcito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                KrillcitoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 KrillcitoKeyTyped(evt);
             }
@@ -185,6 +204,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         xd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                xdKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 xdKeyTyped(evt);
             }
@@ -196,6 +218,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         Pulpito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PulpitoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 PulpitoKeyTyped(evt);
             }
@@ -223,6 +248,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         dimension2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                dimension2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 dimension2KeyTyped(evt);
             }
@@ -358,13 +386,13 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
         anchoTablero = Integer.parseInt(dimension1.getText());
         altoTablero = Integer.parseInt(dimension2.getText());
-        /*Orca = Integer.parseInt(Orquita.getText());
+        Orca = Integer.parseInt(Orquita.getText());
         Tiburon = Integer.parseInt(Tiburoncito.getText());
         LoboMarino = Integer.parseInt(LoboMarinito.getText());
         Pulpo = Integer.parseInt(Pulpito.getText());
         Salmon = Integer.parseInt(Salmoncito.getText());
         Krill = Integer.parseInt(Krillcito.getText());
-        Actualizacion = Integer.parseInt(xd.getText());*/
+        Actualizacion = Integer.parseInt(xd.getText());
         matriz();
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -379,11 +407,12 @@ public class Ventana extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Ingresar Solo Numeros");
-        }    
+        }
+        
     }//GEN-LAST:event_dimension1KeyTyped
 
     private void dimension2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dimension2KeyTyped
-        
+         
         char validar = evt.getKeyChar();
     
         if(Character.isLetter(validar)){
@@ -478,6 +507,42 @@ public class Ventana extends javax.swing.JFrame {
         
     }//GEN-LAST:event_xdKeyTyped
 
+    private void dimension1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dimension1KeyReleased
+        Validar();
+    }//GEN-LAST:event_dimension1KeyReleased
+
+    private void dimension2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dimension2KeyReleased
+        Validar();
+    }//GEN-LAST:event_dimension2KeyReleased
+
+    private void OrquitaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OrquitaKeyReleased
+        Validar();
+    }//GEN-LAST:event_OrquitaKeyReleased
+
+    private void TiburoncitoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TiburoncitoKeyReleased
+        Validar();
+    }//GEN-LAST:event_TiburoncitoKeyReleased
+
+    private void LoboMarinitoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoboMarinitoKeyReleased
+        Validar();
+    }//GEN-LAST:event_LoboMarinitoKeyReleased
+
+    private void PulpitoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PulpitoKeyReleased
+        Validar();
+    }//GEN-LAST:event_PulpitoKeyReleased
+
+    private void SalmoncitoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalmoncitoKeyReleased
+        Validar();
+    }//GEN-LAST:event_SalmoncitoKeyReleased
+
+    private void KrillcitoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KrillcitoKeyReleased
+        Validar();
+    }//GEN-LAST:event_KrillcitoKeyReleased
+
+    private void xdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_xdKeyReleased
+        Validar();
+    }//GEN-LAST:event_xdKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -549,6 +614,20 @@ public class Ventana extends javax.swing.JFrame {
         
         this.repaint();
         
+    }
+    
+    public void Validar(){
+        
+        if(dimension1.getText().isEmpty()  || dimension2.getText().isEmpty() || Tiburoncito.getText().isEmpty() || Salmoncito.getText().isEmpty() || 
+                Pulpito.getText().isEmpty() || Orquita.getText().isEmpty() || LoboMarinito.getText().isEmpty() || Krillcito.getText().isEmpty() || xd.getText().isEmpty()){
+            
+            jButton1.setEnabled(false);
+            
+        }else{
+            
+            jButton1.setEnabled(true);
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
