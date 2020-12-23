@@ -25,6 +25,7 @@ public class Ventana extends javax.swing.JFrame {
     
     private int cantidadMax;
     private int cantidadAnimal;
+    
     private int ancho;
     private int largo;
     private int Orca;
