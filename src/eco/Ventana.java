@@ -39,6 +39,12 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana() {
         
         initComponents();
+        ImgOrca.setVisible(false);
+        ImgTiburon.setVisible(false);
+        ImgLoboMarino.setVisible(false);
+        ImgPulpo.setVisible(false);
+        ImgSalmon.setVisible(false);
+        ImgKrill.setVisible(false);
         //margen = 50;
         //anchoTablero = 6;
         //altoTablero = 6;
@@ -108,6 +114,12 @@ public class Ventana extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        ImgOrca = new javax.swing.JLabel();
+        ImgTiburon = new javax.swing.JLabel();
+        ImgLoboMarino = new javax.swing.JLabel();
+        ImgPulpo = new javax.swing.JLabel();
+        ImgSalmon = new javax.swing.JLabel();
+        ImgKrill = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -267,25 +279,52 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel9.setText("alto");
 
+        ImgOrca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Orca.png"))); // NOI18N
+
+        ImgTiburon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Tiburon.png"))); // NOI18N
+
+        ImgLoboMarino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LoboMarino.png"))); // NOI18N
+
+        ImgPulpo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pulpo.png"))); // NOI18N
+
+        ImgSalmon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Salmon.png"))); // NOI18N
+
+        ImgKrill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Krill.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(924, 924, 924)
+                .addContainerGap()
+                .addComponent(ImgOrca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ImgTiburon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ImgLoboMarino, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ImgPulpo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ImgSalmon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ImgKrill)
+                .addGap(558, 558, 558)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Pulpito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Krillcito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Tiburoncito, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Pulpito, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                        .addComponent(Krillcito)
+                                        .addComponent(Tiburoncito))
+                                    .addGap(2, 2, 2))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(xd)
                             .addComponent(Salmoncito)
@@ -298,31 +337,42 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(21, 21, 21))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(27, 27, 27)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dimension2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jButton1))
+                                .addComponent(jLabel7)
+                                .addGap(27, 27, 27)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dimension2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ImgOrca)
+                            .addComponent(ImgTiburon)
+                            .addComponent(ImgLoboMarino, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImgPulpo)
+                            .addComponent(ImgSalmon)
+                            .addComponent(ImgKrill))))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -624,21 +674,22 @@ public class Ventana extends javax.swing.JFrame {
                 etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));
                 etiquetas[i][j].setSize(iconSize, iconSize);
                 etiquetas[i][j].setLocation(margen + i*iconSize, margen + j*iconSize);
-                /*if (etiquetas[i][j].getText().equals("1")) {
-                    etiquetas[i][j].setIcon(jLabel1.getIcon());
-                } else if (etiquetas[i][j].getText().equals("2")) {
-                    etiquetas[i][j].setIcon(jLabel2.getIcon());
-                } else if (etiquetas[i][j].getText().equals("3")) {
-                    etiquetas[i][j].setIcon(jLabel3.getIcon());
-                } else if (etiquetas[i][j].getText().equals("4")) {
-                    etiquetas[i][j].setIcon(jLabel4.getIcon());
-                } else if (etiquetas[i][j].getText().equals("5")) {
-                    etiquetas[i][j].setIcon(jLabel5.getIcon());
-                } else if (etiquetas[i][j].getText().equals("6")) {
-                    etiquetas[i][j].setIcon(jLabel6.getIcon());
-                }*/
                 
-                //etiquetas[i][j].setText("");
+                if (etiquetas[i][j].getText().equals("1")) {
+                    etiquetas[i][j].setIcon(ImgOrca.getIcon());
+                } else if (etiquetas[i][j].getText().equals("2")) {
+                    etiquetas[i][j].setIcon(ImgTiburon.getIcon());
+                } else if (etiquetas[i][j].getText().equals("3")) {
+                    etiquetas[i][j].setIcon(ImgLoboMarino.getIcon());
+                } else if (etiquetas[i][j].getText().equals("4")) {
+                    etiquetas[i][j].setIcon(ImgPulpo.getIcon());
+                } else if (etiquetas[i][j].getText().equals("5")) {
+                    etiquetas[i][j].setIcon(ImgSalmon.getIcon());
+                } else if (etiquetas[i][j].getText().equals("6")) {
+                    etiquetas[i][j].setIcon(ImgKrill.getIcon());
+                }
+                
+                etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
                 etiquetas[i][j].setVisible(true);
@@ -664,6 +715,12 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ImgKrill;
+    private javax.swing.JLabel ImgLoboMarino;
+    private javax.swing.JLabel ImgOrca;
+    private javax.swing.JLabel ImgPulpo;
+    private javax.swing.JLabel ImgSalmon;
+    private javax.swing.JLabel ImgTiburon;
     private javax.swing.JTextField Krillcito;
     private javax.swing.JTextField LoboMarinito;
     private javax.swing.JTextField Orquita;

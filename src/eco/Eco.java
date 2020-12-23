@@ -10,7 +10,7 @@ public class Eco {
     public Eco(int filas, int columnas){
         
         valores = new int[filas][columnas];
-        LlenarMatriz(6);
+        LlenarMatriz(7);
         
     }
     
