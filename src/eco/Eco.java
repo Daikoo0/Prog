@@ -24,6 +24,7 @@ public class Eco {
         }
         
     }
+    
     public int GetValue(int x, int y){
         return valores[x][y];
     }
