@@ -37,7 +37,8 @@ public class Eco {
     private void LlenarMatriz(){
         int x = 0;
         int y = 0;
-        int i,o = 0;
+        int i = 0;
+        int o = 0;
         int q =0;
         
         Random r = new Random();
@@ -130,9 +131,9 @@ public class Eco {
         
         for(o=0; o<valores.length; o++ ){
             for (i=0; i<valores[0].length; i++) {
-                int posAleatoria = r.nextInt(valores.length);
-                int temp = valores[i][o];
-                valores[i][o] = valores[posAleatoria][posAleatoria];
+                int posAleatoria = r.nextInt(largo);
+                int temp = valores[o][i];
+                valores[o][i] = valores[posAleatoria][posAleatoria];
                 valores[posAleatoria][posAleatoria] = temp;
             }
         }
