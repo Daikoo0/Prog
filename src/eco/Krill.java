@@ -12,7 +12,7 @@ public class Krill extends Peces {
         AlimentacionMax = 35;
         Reproduccion = 180;
         EsperanzaVida = 360;
-        Vivo  = true;
+        
         
     }
     
@@ -32,4 +32,8 @@ public class Krill extends Peces {
     public void Muerte() {
     }
     
+    @Override
+    public void GetNombre(){
+        System.out.println(Nombre);
+    }
 }

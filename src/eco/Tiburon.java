@@ -12,7 +12,7 @@ public class Tiburon extends Peces{
         AlimentacionMax = 25;
         Reproduccion = 360;
         EsperanzaVida = 480;
-        Vivo = true;
+        
         
     }
     
@@ -32,4 +32,8 @@ public class Tiburon extends Peces{
     public void Muerte() {
     }
     
+    @Override
+    public void GetNombre(){
+        System.out.println(Nombre);
+    }
 }

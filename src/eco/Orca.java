@@ -12,7 +12,7 @@ public class Orca extends Peces {
         AlimentacionMax = 30;
         Reproduccion = 240;
         EsperanzaVida = 300;
-        Vivo = true;
+
         
     }
     
@@ -32,4 +32,8 @@ public class Orca extends Peces {
     public void Muerte() {
     }
     
+    @Override
+    public void GetNombre(){
+        System.out.println(Nombre);
+    }
 }

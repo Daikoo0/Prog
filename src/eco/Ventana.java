@@ -22,6 +22,7 @@ public class Ventana extends javax.swing.JFrame {
     public int iconSize;
     public Eco tablero;
     public JLabel[][] etiquetas;
+    public Peces[][] peces;
     
     private int cantidadMax;
     private int cantidadAnimal;
@@ -45,6 +46,7 @@ public class Ventana extends javax.swing.JFrame {
         ImgPulpo.setVisible(false);
         ImgSalmon.setVisible(false);
         ImgKrill.setVisible(false);
+        Piedrita.setVisible(false);
         //margen = 50;
         //anchoTablero = 6;
         //altoTablero = 6;
@@ -120,6 +122,7 @@ public class Ventana extends javax.swing.JFrame {
         ImgPulpo = new javax.swing.JLabel();
         ImgSalmon = new javax.swing.JLabel();
         ImgKrill = new javax.swing.JLabel();
+        Piedrita = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -291,6 +294,8 @@ public class Ventana extends javax.swing.JFrame {
 
         ImgKrill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Krill.png"))); // NOI18N
 
+        Piedrita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Piedra.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -300,21 +305,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel10)
-                                        .addGap(5, 5, 5)
-                                        .addComponent(dimension2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(ImgOrca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(ImgTiburon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,8 +317,27 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(ImgSalmon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ImgKrill)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 473, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Piedrita)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(dimension1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel10)
+                                                .addGap(5, 5, 5)
+                                                .addComponent(dimension2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,10 +347,7 @@ public class Ventana extends javax.swing.JFrame {
                                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(Tiburoncito)))
-                                        .addGap(2, 2, 2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)))))
+                                        .addGap(2, 2, 2)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(xd)
                             .addComponent(Salmoncito)
@@ -367,15 +374,17 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ImgOrca)
-                            .addComponent(ImgTiburon)
-                            .addComponent(ImgLoboMarino, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ImgPulpo)
-                            .addComponent(ImgSalmon)
-                            .addComponent(ImgKrill))))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Piedrita)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ImgOrca)
+                                .addComponent(ImgTiburon)
+                                .addComponent(ImgLoboMarino, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ImgPulpo)
+                                .addComponent(ImgSalmon)
+                                .addComponent(ImgKrill)))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -413,7 +422,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(xd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addGap(286, 286, 286))
+                .addGap(292, 292, 292))
         );
 
         pack();
@@ -467,7 +476,7 @@ public class Ventana extends javax.swing.JFrame {
         Salmon = Integer.parseInt(Salmoncito.getText());
         Krill = Integer.parseInt(Krillcito.getText());
         Actualizacion = Integer.parseInt(xd.getText());
-        cantidadAnimal = Orca + Tiburon + LoboMarino + Pulpo + Salmon + Krill;
+        cantidadAnimal = Orca + Tiburon + LoboMarino + Pulpo + Salmon + Krill + 2;
 
         if (cantidadMax < cantidadAnimal){ 
             getToolkit().beep();
@@ -478,6 +487,8 @@ public class Ventana extends javax.swing.JFrame {
             matriz();
             jButton1.setEnabled(false);
         }
+        
+         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -667,34 +678,54 @@ public class Ventana extends javax.swing.JFrame {
         margen = 50;
         iconSize = 64;
         
-        tablero = new Eco(anchoTablero, altoTablero);
+        tablero = new Eco(anchoTablero, altoTablero, Orca, Tiburon, LoboMarino, Pulpo, Salmon, Krill);
         etiquetas = new JLabel[anchoTablero][altoTablero];
+        Peces peces[][] = new Peces[anchoTablero][altoTablero];
         
         for (int i = 0; i < anchoTablero; i++) {
             for (int j = 0; j < altoTablero; j++) {
-                etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));
+                
+                etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));        
                 etiquetas[i][j].setSize(iconSize, iconSize);
                 etiquetas[i][j].setLocation(margen + i*iconSize, margen + j*iconSize);
                 
-                if (etiquetas[i][j].getText().equals("1")) {
+                if (etiquetas[i][j].getText().equals("6")) {
                     etiquetas[i][j].setIcon(ImgOrca.getIcon());
-                } else if (etiquetas[i][j].getText().equals("2")) {
-                    etiquetas[i][j].setIcon(ImgTiburon.getIcon());
-                } else if (etiquetas[i][j].getText().equals("3")) {
-                    etiquetas[i][j].setIcon(ImgLoboMarino.getIcon());
-                } else if (etiquetas[i][j].getText().equals("4")) {
-                    etiquetas[i][j].setIcon(ImgPulpo.getIcon());
+                    peces[i][j] = new Orca();
                 } else if (etiquetas[i][j].getText().equals("5")) {
+                    etiquetas[i][j].setIcon(ImgTiburon.getIcon());
+                    peces[i][j] = new Tiburon();
+                } else if (etiquetas[i][j].getText().equals("4")) {
+                    etiquetas[i][j].setIcon(ImgLoboMarino.getIcon());
+                    peces[i][j] = new LoboMarino();
+                } else if (etiquetas[i][j].getText().equals("3")) {
+                    etiquetas[i][j].setIcon(ImgPulpo.getIcon());
+                    peces[i][j] = new Pulpo();
+                } else if (etiquetas[i][j].getText().equals("2")) {
                     etiquetas[i][j].setIcon(ImgSalmon.getIcon());
-                } else if (etiquetas[i][j].getText().equals("6")) {
+                    peces[i][j] = new Salmon();
+                } else if (etiquetas[i][j].getText().equals("1")) {
                     etiquetas[i][j].setIcon(ImgKrill.getIcon());
+                    peces[i][j] = new Krill();
+                } else if (etiquetas[i][j].getText().equals("0")) {
+                    peces[i][j] = new Awa();
+                } else if (etiquetas[i][j].getText().equals("7")) {
+                    etiquetas[i][j].setIcon(Piedrita.getIcon());
                 }
+                
                 
                 etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
                 etiquetas[i][j].setVisible(true);
             }
+        }
+        
+        for (int i = 0; i < anchoTablero; i++) {
+            for (int j = 0; j < altoTablero; j++) {
+                System.out.println(peces[i][j]); 
+            }
+            System.out.println(" ");
         }
         
         this.repaint();
@@ -725,6 +756,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField Krillcito;
     private javax.swing.JTextField LoboMarinito;
     private javax.swing.JTextField Orquita;
+    private javax.swing.JLabel Piedrita;
     private javax.swing.JTextField Pulpito;
     private javax.swing.JTextField Salmoncito;
     private javax.swing.JTextField Tiburoncito;

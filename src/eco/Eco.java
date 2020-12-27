@@ -6,20 +6,134 @@ import java.util.Random;
 public class Eco {
         
     private int[][] valores;
+    private int Orca;
+    private int Tiburon;
+    private int LoboMarino;
+    private int Pulpo;
+    private int Salmon;
+    private int Krill;
     
-    public Eco(int filas, int columnas){
+    private int ancho;
+    private int largo;
+    
+    public Eco(int filas, int columnas, int Orca, int Tiburon, int LoboMarino, int Pulpo, int Salmon, int Krill){
+        
+        this.Orca = Orca;
+        this.Tiburon = Tiburon;
+        this.LoboMarino = LoboMarino;
+        this.Pulpo = Pulpo;
+        this.Salmon = Salmon;
+        this.Krill = Krill;
+        
+        this.ancho = filas;
+        this.largo = columnas;
         
         valores = new int[filas][columnas];
-        LlenarMatriz(7);
+        
+        LlenarMatriz();
         
     }
     
-    private void LlenarMatriz(int bound){
+    private void LlenarMatriz(){
+        int x = 0;
+        int y = 0;
+        int i,o = 0;
+        int q =0;
         
         Random r = new Random();
-        for (int i = 0; i < valores.length; i++) {
-            for (int j = 0; j < valores[0].length; j++) {
-                valores[i][j] = r.nextInt(bound);
+        
+        for(q=0; q<2; q++){
+                
+            valores[x][y] = 7;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        q=0;
+        
+        for(q=0; q<Orca; q++){
+                
+            valores[x][y] = 6;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        
+        q=0;
+        
+        for(q=0; q<Tiburon; q++){
+                
+            valores[x][y] = 5;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        
+        q=0;
+        
+        for(q=0; q<LoboMarino; q++){
+                
+            valores[x][y] = 4;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        q=0;
+        
+        for(q=0; q<Pulpo; q++){
+                
+            valores[x][y] = 3;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        q=0;
+        
+        for(q=0; q<Salmon; q++){
+                
+            valores[x][y] = 2;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        q=0;
+        
+        for(q=0; q<Krill; q++){
+                
+            valores[x][y] = 1;
+            y = y+1;
+                
+            if(y == largo ){
+                x = x +1;
+                y=0;
+            }
+        }
+        q=0;
+        
+        for(o=0; o<valores.length; o++ ){
+            for (i=0; i<valores[0].length; i++) {
+                int posAleatoria = r.nextInt(valores.length);
+                int temp = valores[i][o];
+                valores[i][o] = valores[posAleatoria][posAleatoria];
+                valores[posAleatoria][posAleatoria] = temp;
             }
         }
         

@@ -10,7 +10,7 @@ public abstract class Peces {
     protected int AlimentacionMax;
     protected int Reproduccion;
     protected int EsperanzaVida;
-    protected boolean Vivo;
+    
     
     // Funciones //
     
@@ -18,6 +18,7 @@ public abstract class Peces {
     public abstract void Comer();
     public abstract void Reproducir();
     public abstract void Muerte();
+    public abstract void GetNombre();
     
        
 }
