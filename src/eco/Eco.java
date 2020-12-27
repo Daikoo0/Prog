@@ -131,10 +131,13 @@ public class Eco {
         
         for(o=0; o<valores.length; o++ ){
             for (i=0; i<valores[0].length; i++) {
-                int posAleatoria = r.nextInt(largo);
+                
+                int posAleatoria1 = r.nextInt(ancho);
+                int posAleatoria2 = r.nextInt(largo);
                 int temp = valores[o][i];
-                valores[o][i] = valores[posAleatoria][posAleatoria];
-                valores[posAleatoria][posAleatoria] = temp;
+                valores[o][i] = valores[posAleatoria1][posAleatoria2];
+                valores[posAleatoria1][posAleatoria2] = temp;
+                
             }
         }
         

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package eco;
+import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -711,6 +712,7 @@ public class Ventana extends javax.swing.JFrame {
                     peces[i][j] = new Awa();
                 } else if (etiquetas[i][j].getText().equals("7")) {
                     etiquetas[i][j].setIcon(Piedrita.getIcon());
+                    peces[i][j] = new Piedra();
                 }
                 
                 
@@ -744,6 +746,16 @@ public class Ventana extends javax.swing.JFrame {
             jButton1.setEnabled(true);
             
         }
+    }
+    
+    public void Moverse(){
+        
+        Random modnar = new Random();
+        int randomX = modnar.nextInt(3);
+        int randomY = modnar.nextInt(3);
+        
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
