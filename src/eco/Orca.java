@@ -1,5 +1,7 @@
 package eco;
 
+import java.util.Random;
+
 public class Orca extends Peces {
     
     public Orca(){
@@ -12,12 +14,14 @@ public class Orca extends Peces {
         AlimentacionMax = 30;
         Reproduccion = 240;
         EsperanzaVida = 300;
-
+        
         
     }
-    
+    Random r = new Random();
     @Override
     public void Mover(){
+        int R1 = r.nextInt(2);
+        
     }
 
     @Override
