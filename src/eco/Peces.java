@@ -19,6 +19,6 @@ public abstract class Peces {
     public abstract void Reproducir();
     public abstract void Muerte();
     public abstract String GetNombre();
-    
+    public abstract int GetDepredar();
        
 }

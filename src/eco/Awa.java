@@ -36,4 +36,8 @@ public class Awa extends Peces{
     public String GetNombre(){
         return Nombre;
     }
+    
+    public int GetDepredar() {
+        return Depredar;
+    }
 }

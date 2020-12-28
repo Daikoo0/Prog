@@ -8,7 +8,7 @@ public class Piedra extends Peces {
         
         Nombre = "Piedra";
         InicialN = "P";
-        Depredar = 0;
+        Depredar = 7;
         Especie = 0;
         AlimentacionMin = 0;
         AlimentacionMax = 0;
@@ -37,6 +37,10 @@ public class Piedra extends Peces {
     @Override
     public String GetNombre(){
         return Nombre;
+    }
+    
+    public int GetDepredar() {
+        return Depredar;
     }
     
 }

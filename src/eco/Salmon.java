@@ -37,6 +37,10 @@ public class Salmon extends Peces{
         return Nombre;
     }
     
+    public int GetDepredar() {
+        return Depredar;
+    }
+    
     /*public String GetNombre(){
         return Nombre;
     }
