@@ -724,7 +724,6 @@ public class Ventana extends javax.swing.JFrame {
                     peces[i][j] = new Piedra();
                 }
                 
-                
                 etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
@@ -757,6 +756,41 @@ public class Ventana extends javax.swing.JFrame {
         }
     }
     
+    public void CargarIMG(){
+        for (int i = 0; i < anchoTablero; i++) {
+            for (int j = 0; j < altoTablero; j++) {
+                
+                if (etiquetas[i][j].getText().equals("6")) {
+                    etiquetas[i][j].setIcon(ImgOrca.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("5")) {
+                    etiquetas[i][j].setIcon(ImgTiburon.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("4")) {
+                    etiquetas[i][j].setIcon(ImgLoboMarino.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("3")) {
+                    etiquetas[i][j].setIcon(ImgPulpo.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("2")) {
+                    etiquetas[i][j].setIcon(ImgSalmon.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("1")) {
+                    etiquetas[i][j].setIcon(ImgKrill.getIcon());
+                    
+                } else if (etiquetas[i][j].getText().equals("7")) {
+                    etiquetas[i][j].setIcon(Piedrita.getIcon());
+                    
+                }
+                
+                etiquetas[i][j].setText("");
+               
+                this.add(etiquetas[i][j]);
+                etiquetas[i][j].setVisible(true);
+            }
+        }
+    }
+    
     public void Moverse(){
         
         for(int x = 0; x < anchoTablero; x++){
@@ -764,35 +798,112 @@ public class Ventana extends javax.swing.JFrame {
                 
                 Random modnar = new Random();
                 int khacer = modnar.nextInt(2);
-        
+                Peces temp;
                 if(khacer == 0){
                     //MOVERSE EN EL EJE X
                     
-                    int RandomX = modnar.nextInt(2);
-                    String animal = peces[x][y].GetNombre();
+                    //int RandomX = modnar.nextInt(2);
                     
-                    if(animal == "Awa" ){
-                        //Se puede Mover
+                    int animalAct = peces[x][y].GetDepredar();
+                    
+                    int animal1 = peces[x][y-1].GetDepredar();
+                    int animal2 = peces[x][y+1].GetDepredar();
+                    
+                    if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                         
-                    }
-                        
-                        
-                    //etiquetas[x][y]
-                    //peces[x][y]
-            
+                        if(y == 0){
+                            
+                            if(animal2 == 0){
+                                
+                                temp = peces[x][y+1];
+                                peces[x][y+1] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                        }else if(y == anchoTablero -1){
+                            
+                            if(animal1 == 0){
+                                
+                                temp = peces[x][y-1];
+                                peces[x][y-1] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                        }else if(animal1 == 0 || animal2 == 0){
+                            
+                            int xd = modnar.nextInt(2);
+                                    
+                            if(xd == 0 && animal2 == 0){
+                                
+                                temp = peces[x][y+1];
+                                peces[x][y+1] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                            if(xd == 1){
+                                
+                                temp = peces[x][y-1];
+                                peces[x][y-1] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            } 
+                        }                       
+                    }   
                 }else if(khacer == 1){
-                    //MOVERSE EN EL EJE Y
+                    //MOVERSE EN EL EYE Y
+                    //CHOLOH SIMP
                     
-                    int RandomY = modnar.nextInt(2);
-                    String animal = peces[x][y].GetNombre();
+                    int animalAct = peces[x][y].GetDepredar();
                     
-                    if(animal == "Awa" ){
-                        //Se puede Mover
+                    int animal1 = peces[x-1][y].GetDepredar();
+                    int animal2 = peces[x+1][y].GetDepredar();
+                    
+                    if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                         
-                    }
-                    //etiquetas[x][y]
-                    //peces[x][y]
-            
+                        if(x == 0){
+                            
+                            if(animal2 == 0){
+                                
+                                temp = peces[x+1][y];
+                                peces[x+1][y] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                        }else if(x == altoTablero-1){
+                            
+                            if(animal1 == 0){
+                                
+                                temp = peces[x-1][y];
+                                peces[x-1][y] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                        }else if(animal1 == 0 || animal2 == 0){
+                            
+                            int xd = modnar.nextInt(2);
+                                    
+                            if(xd == 0 && animal2 == 0){
+                                
+                                temp = peces[x+1][y];
+                                peces[x+1][y] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            }
+                            
+                            if(xd == 1){
+                                
+                                temp = peces[x-1][y];
+                                peces[x-1][y] = peces[x][y];
+                                peces[x][y] = temp;
+                                
+                            } 
+                        }                       
+                    } 
                 }
             }
         }
