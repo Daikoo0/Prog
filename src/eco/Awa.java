@@ -33,7 +33,7 @@ public class Awa extends Peces{
     }
     
     @Override
-    public void GetNombre(){
-        System.out.println(Nombre);
+    public String GetNombre(){
+        return Nombre;
     }
 }

@@ -33,8 +33,8 @@ public class Salmon extends Peces{
     }
     
     @Override
-    public void GetNombre(){
-        System.out.println(Nombre);
+    public String GetNombre(){
+        return Nombre;
     }
     
     /*public String GetNombre(){

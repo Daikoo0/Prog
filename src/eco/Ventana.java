@@ -760,12 +760,43 @@ public class Ventana extends javax.swing.JFrame {
     
     public void Moverse(){
         
-        Random modnar = new Random();
-        int randomX = modnar.nextInt(3);
-        int randomY = modnar.nextInt(3);
+        for(int x = 0; x < anchoTablero; x++){
+            for(int y = 0; y < altoTablero; y++){
+                
+                Random modnar = new Random();
+                int khacer = modnar.nextInt(2);
         
-        
-        
+                if(khacer == 0){
+                    //MOVERSE EN EL EJE X
+                    
+                    int RandomX = modnar.nextInt(2);
+                    String animal = peces[x][y].GetNombre();
+                    
+                    if(animal == "Awa" ){
+                        //Se puede Mover
+                        
+                    }
+                        
+                        
+                    //etiquetas[x][y]
+                    //peces[x][y]
+            
+                }else if(khacer == 1){
+                    //MOVERSE EN EL EJE Y
+                    
+                    int RandomY = modnar.nextInt(2);
+                    String animal = peces[x][y].GetNombre();
+                    
+                    if(animal == "Awa" ){
+                        //Se puede Mover
+                        
+                    }
+                    //etiquetas[x][y]
+                    //peces[x][y]
+            
+                }
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
