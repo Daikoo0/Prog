@@ -17,7 +17,6 @@ public class Orca extends Peces {
         
         
     }
-    Random r = new Random();
     
     @Override
     public int GetDepredar() {
@@ -26,8 +25,6 @@ public class Orca extends Peces {
     
     @Override
     public void Mover(){
-        int R1 = r.nextInt(2);
-        
     }
 
     @Override

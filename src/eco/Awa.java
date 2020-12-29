@@ -4,7 +4,7 @@ package eco;
 public class Awa extends Peces{
     public Awa(){
         
-        Nombre = "nada";
+        Nombre = "Awa";
         InicialN = "n";
         Depredar = 0;
         Especie = 0;
