@@ -848,7 +848,7 @@ public class Ventana extends javax.swing.JFrame {
                         
                         int animal2 = peces[x][y+1].GetDepredar();
                         
-                        if(animalAct != 0 || animalAct != 7){
+                        if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                             
                             temp = peces[x][y+1];
                             peces[x][y+1] = peces[x][y];
@@ -860,7 +860,7 @@ public class Ventana extends javax.swing.JFrame {
                     }else if(y == anchoTablero -1){
                         int animal1 = peces[x][y-1].GetDepredar();
                     
-                        if(animalAct != 0 || animalAct !=7){
+                        if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                             
                             temp = peces[x][y-1];
                             peces[x][y-1] = peces[x][y];
@@ -883,7 +883,7 @@ public class Ventana extends javax.swing.JFrame {
                                 
                         }
                             
-                        if(xd == 1 && animal1 == 0){
+                        else if(xd == 1 && animal1 == 0){
                                 
                             temp = peces[x][y-1];
                             peces[x][y-1] = peces[x][y];
@@ -899,7 +899,7 @@ public class Ventana extends javax.swing.JFrame {
                         
                         int animal2 = peces[x+1][y].GetDepredar();
                         
-                        if(animalAct != 0 || animalAct != 7){
+                        if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                             
                             temp = peces[x+1][y];
                             peces[x+1][y] = peces[x][y];
@@ -911,7 +911,7 @@ public class Ventana extends javax.swing.JFrame {
                     }else if(x == altoTablero -1){
                         int animal1 = peces[x-1][y].GetDepredar();
                     
-                        if(animalAct != 0 || animalAct !=7){
+                        if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                             
                             temp = peces[x-1][y];
                             peces[x-1][y] = peces[x][y];
@@ -934,7 +934,7 @@ public class Ventana extends javax.swing.JFrame {
                                 
                         }
                             
-                        if(xd == 1 && animal1 == 0){
+                        else if(xd == 1 && animal1 == 0){
                                 
                             temp = peces[x-1][y];
                             peces[x-1][y] = peces[x][y];
