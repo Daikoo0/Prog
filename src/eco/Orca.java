@@ -18,7 +18,8 @@ public class Orca extends Peces {
         
     }
     Random r = new Random();
-
+    
+    @Override
     public int GetDepredar() {
         return Depredar;
     }

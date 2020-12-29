@@ -49,6 +49,8 @@ public class Ventana extends javax.swing.JFrame {
         ImgKrill.setVisible(false);
         Piedrita.setVisible(false);
         
+        
+           
     }
 
     /**
@@ -89,7 +91,7 @@ public class Ventana extends javax.swing.JFrame {
         ImgKrill = new javax.swing.JLabel();
         Piedrita = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -270,7 +272,12 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("jToggleButton1");
+        jButton3.setText("jButton3");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -298,7 +305,6 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jToggleButton1)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Tiburoncito, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -332,6 +338,10 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(Salmoncito, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(160, 160, 160))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +406,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton1)
+                .addComponent(jButton3)
                 .addGap(253, 253, 253))
         );
 
@@ -459,9 +469,8 @@ public class Ventana extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "el tamaño del ecosistema es muy pequeño para la cantidad de animales!!\n" + "\npuede tanto aumentar el tamaño del ecosistema como bajar la cantidad de animales");
 
         }else{
-            matriz();
+            matriz();          
             jButton1.setEnabled(false);
-            Funcion();
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -617,6 +626,23 @@ public class Ventana extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        for (int i = 0; i < anchoTablero; i++) {
+            for (int j = 0; j < altoTablero; j++) {
+                
+                String animalxd;
+                
+                animalxd = etiquetas[i][j].getText();
+                System.out.println(animalxd); 
+                
+                if(animalxd == "5"){
+                    System.out.println("Tiburon de Pana"); 
+                }
+            }
+            System.out.println(" ");
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -703,13 +729,21 @@ public class Ventana extends javax.swing.JFrame {
         
         for (int i = 0; i < anchoTablero; i++) {
             for (int j = 0; j < altoTablero; j++) {
-                System.out.println(peces[i][j]); 
+                
+                int animalxd;
+                
+                animalxd = peces[i][j].GetDepredar();
+                System.out.println(animalxd); 
+                
+                if(animalxd == 5){
+                    System.out.println("Tiburon de Pana"); 
+                }
             }
-            System.out.println(" ");
         }
         
-        this.repaint();
         
+        this.repaint();
+            
     }
     
     public void Validar(){
@@ -783,15 +817,17 @@ public class Ventana extends javax.swing.JFrame {
                 Random modnar = new Random();
                 int khacer = modnar.nextInt(2);
                 Peces temp;
+                
+                int animalAct = peces[x][y].GetDepredar();
+                    
+                int animal1 = peces[x][y-1].GetDepredar();
+                int animal2 = peces[x][y+1].GetDepredar();
+                
                 if(khacer == 0){
                     //MOVERSE EN EL EJE X
                     
                     //int RandomX = modnar.nextInt(2);
                     
-                    int animalAct = peces[x][y].GetDepredar();
-                    
-                    int animal1 = peces[x][y-1].GetDepredar();
-                    int animal2 = peces[x][y+1].GetDepredar();
                     
                     if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                         
@@ -839,11 +875,7 @@ public class Ventana extends javax.swing.JFrame {
                 }else if(khacer == 1){
                     //MOVERSE EN EL EYE Y
                     //CHOCLOH SIMP
-                    
-                    int animalAct = peces[x][y].GetDepredar();
-                    
-                    int animal1 = peces[x-1][y].GetDepredar();
-                    int animal2 = peces[x+1][y].GetDepredar();
+      
                     
                     if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
                         
@@ -941,6 +973,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField dimension2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -952,7 +985,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField xd;
     // End of variables declaration//GEN-END:variables
 }

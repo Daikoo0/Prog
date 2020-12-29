@@ -36,7 +36,7 @@ public class Tiburon extends Peces{
     public String GetNombre(){
         return Nombre;
     }
-    
+    @Override
     public int GetDepredar() {
         return Depredar;
     }

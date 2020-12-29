@@ -39,6 +39,7 @@ public class Piedra extends Peces {
         return Nombre;
     }
     
+    @Override
     public int GetDepredar() {
         return Depredar;
     }

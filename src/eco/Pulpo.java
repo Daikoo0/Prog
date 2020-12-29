@@ -37,6 +37,7 @@ public class Pulpo extends Peces{
         return Nombre;
     }
     
+    @Override
     public int GetDepredar() {
         return Depredar;
     }
