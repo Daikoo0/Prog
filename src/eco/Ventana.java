@@ -38,6 +38,9 @@ public class Ventana extends javax.swing.JFrame {
     private int Krill;
     private int Actualizacion;
     
+    private boolean x;
+    private int cont;
+    
     public Ventana() {
         
         initComponents();
@@ -278,6 +281,11 @@ public class Ventana extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -473,6 +481,9 @@ public class Ventana extends javax.swing.JFrame {
             jButton1.setEnabled(false);
         }
         
+        Moverse();
+
+        this.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Validación de Datos //
@@ -627,21 +638,27 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        for (int i = 0; i < anchoTablero; i++) {
-            for (int j = 0; j < altoTablero; j++) {
-                
-                String animalxd;
-                
-                animalxd = etiquetas[i][j].getText();
-                System.out.println(animalxd); 
-                
-                if(animalxd == "5"){
-                    System.out.println("Tiburon de Pana"); 
-                }
-            }
-            System.out.println(" ");
+        
+        /*this.cont++;
+        
+        if(cont == 1){
+            this.x = false;
+            System.out.println("Simulación Pausada");
         }
+           
+        if(cont == 2){
+            this.cont = 0;
+            System.out.println("Simulación Andando");
+            Funcion();
+        }*/
+        
+        RecargarMatriz();
+        
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -669,7 +686,10 @@ public class Ventana extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+       
+        
+      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -682,10 +702,11 @@ public class Ventana extends javax.swing.JFrame {
         
         margen = 50;
         iconSize = 64;
-        
+       
         tablero = new Eco(anchoTablero, altoTablero, Orca, Tiburon, LoboMarino, Pulpo, Salmon, Krill);
         etiquetas = new JLabel[anchoTablero][altoTablero];
-        Peces peces[][] = new Peces[anchoTablero][altoTablero];
+        
+        this.peces = new Peces[anchoTablero][altoTablero];
         
         for (int i = 0; i < anchoTablero; i++) {
             for (int j = 0; j < altoTablero; j++) {
@@ -762,9 +783,6 @@ public class Ventana extends javax.swing.JFrame {
     
     public void RecargarMatriz(){
         
-
-        //ELIMINA LOS VALORES DE LA MTRIZ ACTUAL
-        
         for (int i = 0; i < anchoTablero; i++) {
             for (int j = 0; j < altoTablero; j++) {
                 
@@ -802,6 +820,8 @@ public class Ventana extends javax.swing.JFrame {
                 this.add(etiquetas[i][j]);
                 
                 etiquetas[i][j].setVisible(true);
+                
+                this.repaint();
             }
         }
         
@@ -819,108 +839,113 @@ public class Ventana extends javax.swing.JFrame {
                 Peces temp;
                 
                 int animalAct = peces[x][y].GetDepredar();
-                    
-                int animal1 = peces[x][y-1].GetDepredar();
-                int animal2 = peces[x][y+1].GetDepredar();
-                
+               
                 if(khacer == 0){
                     //MOVERSE EN EL EJE X
-                    
-                    //int RandomX = modnar.nextInt(2);
-                    
-                    
-                    if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
+              
+                    //SI ESTA EN EL LATERAL IZQUIERDO
+                    if(y == 0){
                         
-                        if(y == 0){
+                        int animal2 = peces[x][y+1].GetDepredar();
+                        
+                        if(animalAct != 0 || animalAct != 7){
                             
-                            if(animal2 == 0){
-                                
-                                temp = peces[x][y+1];
-                                peces[x][y+1] = peces[x][y];
-                                peces[x][y] = temp;
-                                
-                            }
+                            temp = peces[x][y+1];
+                            peces[x][y+1] = peces[x][y];
+                            peces[x][y] = temp;
                             
-                        }else if(y == anchoTablero -1){
+                        }
+                        
+                    //SI ESTA EN EL LATERAL DERECHO    
+                    }else if(y == anchoTablero -1){
+                        int animal1 = peces[x][y-1].GetDepredar();
+                    
+                        if(animalAct != 0 || animalAct !=7){
                             
-                            if(animal1 == 0){
-                                
-                                temp = peces[x][y-1];
-                                peces[x][y-1] = peces[x][y];
-                                peces[x][y] = temp;
-                                
-                            }
+                            temp = peces[x][y-1];
+                            peces[x][y-1] = peces[x][y];
+                            peces[x][y] = temp;
                             
-                        }else if(animal1 == 0 || animal2 == 0){
-                            
-                            int xd = modnar.nextInt(2);
+                        }    
+                                  
+                    //SI ESTA EN MEDIO
+                    }else{
+                        int animal1 = peces[x][y-1].GetDepredar();
+                        int animal2 = peces[x][y+1].GetDepredar();
+                        
+                        int xd = modnar.nextInt(2);
                                     
-                            if(xd == 0 && animal2 == 0){
+                        if(xd == 0 && animal2 == 0){
                                 
-                                temp = peces[x][y+1];
-                                peces[x][y+1] = peces[x][y];
-                                peces[x][y] = temp;
+                            temp = peces[x][y+1];
+                            peces[x][y+1] = peces[x][y];
+                            peces[x][y] = temp;
                                 
-                            }
+                        }
                             
-                            if(xd == 1){
+                        if(xd == 1 && animal1 == 0){
                                 
-                                temp = peces[x][y-1];
-                                peces[x][y-1] = peces[x][y];
-                                peces[x][y] = temp;
+                            temp = peces[x][y-1];
+                            peces[x][y-1] = peces[x][y];
+                            peces[x][y] = temp;
                                 
-                            } 
-                        }                       
+                        } 
                     }   
                 }else if(khacer == 1){
-                    //MOVERSE EN EL EYE Y
-                    //CHOCLOH SIMP
-      
+                    //SE MUEVE EN EL EJE Y
                     
-                    if(animalAct == 1 || animalAct == 2 || animalAct == 3 || animalAct == 4 || animalAct == 5 || animalAct == 6){
+                    //SI ESTA EN LA CIMA
+                    if(x == 0){
                         
-                        if(x == 0){
+                        int animal2 = peces[x+1][y].GetDepredar();
+                        
+                        if(animalAct != 0 || animalAct != 7){
                             
-                            if(animal2 == 0){
-                                
-                                temp = peces[x+1][y];
-                                peces[x+1][y] = peces[x][y];
-                                peces[x][y] = temp;
-                                
-                            }
+                            temp = peces[x+1][y];
+                            peces[x+1][y] = peces[x][y];
+                            peces[x][y] = temp;
                             
-                        }else if(x == altoTablero-1){
+                        }
+                        
+                    //SI ESTA ABAJO  
+                    }else if(x == altoTablero -1){
+                        int animal1 = peces[x-1][y].GetDepredar();
+                    
+                        if(animalAct != 0 || animalAct !=7){
                             
-                            if(animal1 == 0){
-                                
-                                temp = peces[x-1][y];
-                                peces[x-1][y] = peces[x][y];
-                                peces[x][y] = temp;
-                                
-                            }
+                            temp = peces[x-1][y];
+                            peces[x-1][y] = peces[x][y];
+                            peces[x][y] = temp;
                             
-                        }else if(animal1 == 0 || animal2 == 0){
-                            
-                            int xd = modnar.nextInt(2);
+                        }    
+                                  
+                    //SI ESTA EN MEDIO
+                    }else{
+                        int animal1 = peces[x-1][y].GetDepredar();
+                        int animal2 = peces[x+1][y].GetDepredar();
+                        
+                        int xd = modnar.nextInt(2);
                                     
-                            if(xd == 0 && animal2 == 0){
+                        if(xd == 0 && animal2 == 0){
                                 
-                                temp = peces[x+1][y];
-                                peces[x+1][y] = peces[x][y];
-                                peces[x][y] = temp;
+                            temp = peces[x+1][y];
+                            peces[x+1][y] = peces[x][y];
+                            peces[x][y] = temp;
                                 
-                            }
+                        }
                             
-                            if(xd == 1){
+                        if(xd == 1 && animal1 == 0){
                                 
-                                temp = peces[x-1][y];
-                                peces[x-1][y] = peces[x][y];
-                                peces[x][y] = temp;
+                            temp = peces[x-1][y];
+                            peces[x-1][y] = peces[x][y];
+                            peces[x][y] = temp;
                                 
-                            } 
-                        }                       
-                    } 
+                        } 
+                    }
                 }
+                
+                this.repaint();
+                
             }
         }
     }
@@ -928,28 +953,38 @@ public class Ventana extends javax.swing.JFrame {
     public void Funcion(){
         //boolean si = true; 
         int cont = 0;
-        int x = 0;
+        boolean x = true;
         
-        for(x=0; x< 1; x++){
-            
+        while(x = true){
+            cont++;
+            System.out.println("Mueve la matriz");
             Moverse();
+            this.repaint();
+            System.out.println("Termina de mover la matriz");
+            
+            x = false;
+            
+            System.out.println("Termina el programa");
             
             if(cont == Actualizacion){
                 
+                System.out.println("Actualizo la matriz");
                 RecargarMatriz();
+                this.repaint();
                 cont = 0;
-  
+                System.out.println("Termino de Actualizar");
+                
             }
-            
-            cont++;
-            
+
             try {
 
-             Thread.sleep(1000);
+             Thread.sleep(2000);
 
             } catch (InterruptedException e) {
 
             }
+            
+            
             
         }
                 
