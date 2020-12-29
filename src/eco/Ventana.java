@@ -48,42 +48,6 @@ public class Ventana extends javax.swing.JFrame {
         ImgSalmon.setVisible(false);
         ImgKrill.setVisible(false);
         Piedrita.setVisible(false);
-        //margen = 50;
-        //anchoTablero = 6;
-        //altoTablero = 6;
-        //iconSize = 64;
-        
-        
-        /*this.setSize(2*margen + anchoTablero*iconSize , 2*margen + altoTablero*iconSize);
-        
-        tablero = new Eco(anchoTablero, altoTablero);
-        etiquetas = new JLabel[anchoTablero][altoTablero];
-        
-        for (int i = 0; i < anchoTablero; i++) {
-            for (int j = 0; j < altoTablero; j++) {
-                etiquetas[i][j] = new JLabel(Integer.toString(tablero.GetValue(i, j)));
-                etiquetas[i][j].setSize(iconSize, iconSize);
-                etiquetas[i][j].setLocation(margen + i*iconSize, margen + j*iconSize);
-                if (etiquetas[i][j].getText().equals("1")) {
-                    etiquetas[i][j].setIcon(jLabel1.getIcon());
-                } else if (etiquetas[i][j].getText().equals("2")) {
-                    etiquetas[i][j].setIcon(jLabel2.getIcon());
-                } else if (etiquetas[i][j].getText().equals("3")) {
-                    etiquetas[i][j].setIcon(jLabel3.getIcon());
-                } else if (etiquetas[i][j].getText().equals("4")) {
-                    etiquetas[i][j].setIcon(jLabel4.getIcon());
-                } else if (etiquetas[i][j].getText().equals("5")) {
-                    etiquetas[i][j].setIcon(jLabel5.getIcon());
-                } else if (etiquetas[i][j].getText().equals("6")) {
-                    etiquetas[i][j].setIcon(jLabel6.getIcon());
-                }
-                
-                //etiquetas[i][j].setText("");
-               
-                this.add(etiquetas[i][j]);
-                etiquetas[i][j].setVisible(true);
-            }
-        }*/
         
     }
 
@@ -125,6 +89,7 @@ public class Ventana extends javax.swing.JFrame {
         ImgKrill = new javax.swing.JLabel();
         Piedrita = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -305,6 +270,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("jToggleButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -331,6 +298,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jToggleButton1)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Tiburoncito, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +395,9 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(303, 303, 303))
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton1)
+                .addGap(253, 253, 253))
         );
 
         pack();
@@ -491,9 +461,8 @@ public class Ventana extends javax.swing.JFrame {
         }else{
             matriz();
             jButton1.setEnabled(false);
+            Funcion();
         }
-        
-         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -727,6 +696,7 @@ public class Ventana extends javax.swing.JFrame {
                 etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
+                
                 etiquetas[i][j].setVisible(true);
             }
         }
@@ -756,39 +726,53 @@ public class Ventana extends javax.swing.JFrame {
         }
     }
     
-    public void CargarIMG(){
+    public void RecargarMatriz(){
+        
+
+        //ELIMINA LOS VALORES DE LA MTRIZ ACTUAL
+        
         for (int i = 0; i < anchoTablero; i++) {
             for (int j = 0; j < altoTablero; j++) {
                 
-                if (etiquetas[i][j].getText().equals("6")) {
+                //ELIMINA LAS IMG DE LA POSICION ACTUAL
+                etiquetas[i][j].setIcon(null);
+                
+                String NombrePez = peces[i][j].GetNombre();
+                  
+                //DEPENDIENDO DEL ANIMAL QUE ESTE EN LA MATRIZ DE PECES SE LE AÑADE LA IMG CORRESPONDIENTE
+                if(NombrePez == "Orca") {
                     etiquetas[i][j].setIcon(ImgOrca.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("5")) {
+                } else if (NombrePez == "Tiburon") {
                     etiquetas[i][j].setIcon(ImgTiburon.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("4")) {
+                } else if (NombrePez == "LoboMarino") {
                     etiquetas[i][j].setIcon(ImgLoboMarino.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("3")) {
+                } else if (NombrePez == "Pulpo") {
                     etiquetas[i][j].setIcon(ImgPulpo.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("2")) {
+                } else if (NombrePez == "Salmon") {
                     etiquetas[i][j].setIcon(ImgSalmon.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("1")) {
+                } else if (NombrePez == "Krill") {
                     etiquetas[i][j].setIcon(ImgKrill.getIcon());
                     
-                } else if (etiquetas[i][j].getText().equals("7")) {
-                    etiquetas[i][j].setIcon(Piedrita.getIcon());
-                    
+                } else if (NombrePez == "Piedra") {
+                    etiquetas[i][j].setIcon(Piedrita.getIcon());    
                 }
                 
+                // NO SE QUE MIERDA HACEN PERO TIENEN QUE IR XD
                 etiquetas[i][j].setText("");
                
                 this.add(etiquetas[i][j]);
+                
                 etiquetas[i][j].setVisible(true);
             }
         }
+        
+        //PARA ACTUALIZAR EL PANEL 
+        this.repaint();
     }
     
     public void Moverse(){
@@ -854,7 +838,7 @@ public class Ventana extends javax.swing.JFrame {
                     }   
                 }else if(khacer == 1){
                     //MOVERSE EN EL EYE Y
-                    //CHOLOH SIMP
+                    //CHOCLOH SIMP
                     
                     int animalAct = peces[x][y].GetDepredar();
                     
@@ -908,7 +892,37 @@ public class Ventana extends javax.swing.JFrame {
             }
         }
     }
+    
+    public void Funcion(){
+        //boolean si = true; 
+        int cont = 0;
+        int x = 0;
+        
+        for(x=0; x< 1; x++){
+            
+            Moverse();
+            
+            if(cont == Actualizacion){
+                
+                RecargarMatriz();
+                cont = 0;
+  
+            }
+            
+            cont++;
+            
+            try {
 
+             Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+
+            }
+            
+        }
+                
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ImgKrill;
     private javax.swing.JLabel ImgLoboMarino;
@@ -938,6 +952,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField xd;
     // End of variables declaration//GEN-END:variables
 }
