@@ -8,12 +8,23 @@ public class Salmon extends Peces{
         InicialN = "S";
         Depredar = 2;
         Especie = 2;
-        AlimentacionMin = 5;
-        AlimentacionMax = 12;
-        Reproduccion = 180;
-        EsperanzaVida = 360;
+        AlimentacionMin = 3;
+        AlimentacionMax = 10;
+        Reproduccion = 5;
+        EsperanzaVida = 30;
         HambreAct = 0;
+        VidaAct = 0;
         
+    }
+    
+    @Override
+    public void VidaA() {
+        this.VidaAct++;
+    }
+    
+    @Override
+    public int GetVidaAct(){
+        return VidaAct;
     }
     
     @Override
@@ -55,6 +66,11 @@ public class Salmon extends Peces{
     @Override
     public int GetHambreAct(){
         return HambreAct;
+    }
+    
+    @Override
+    public int GetEsperanzaVida(){
+        return EsperanzaVida;
     }
     
     @Override

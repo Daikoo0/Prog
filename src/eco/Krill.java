@@ -10,9 +10,10 @@ public class Krill extends Peces {
         Especie = 1;
         AlimentacionMin = 9999;
         AlimentacionMax = 9999;
-        Reproduccion = 180;
-        EsperanzaVida = 360;
+        Reproduccion = 4;
+        EsperanzaVida = 25;
         HambreAct = 0;
+        VidaAct = 0;
         
     }
     
@@ -30,6 +31,11 @@ public class Krill extends Peces {
 
     @Override
     public void Muerte() {
+    }
+    
+    @Override
+    public void VidaA() {
+        this.VidaAct++;
     }
     
     @Override
@@ -55,6 +61,16 @@ public class Krill extends Peces {
     @Override
     public int GetAlimentacionMax(){
         return AlimentacionMax;
+    }
+    
+    @Override
+    public int GetEsperanzaVida(){
+        return EsperanzaVida;
+    }
+    
+    @Override
+    public int GetVidaAct(){
+        return VidaAct;
     }
     
     @Override

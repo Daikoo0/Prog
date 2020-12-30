@@ -8,12 +8,23 @@ public class Pulpo extends Peces{
         InicialN = "P";
         Depredar = 3;
         Especie = 3;
-        AlimentacionMin = 2;
-        AlimentacionMax = 35;
-        Reproduccion = 180;
-        EsperanzaVida = 360;
+        AlimentacionMin = 5;
+        AlimentacionMax = 12;
+        Reproduccion = 8;
+        EsperanzaVida = 35;
         HambreAct = 0;
+        VidaAct = 0;
         
+    }
+    
+    @Override
+    public void VidaA() {
+        this.VidaAct++;
+    }
+    
+    @Override
+    public int GetVidaAct(){
+        return VidaAct;
     }
     
     @Override
@@ -55,6 +66,11 @@ public class Pulpo extends Peces{
     @Override
     public int GetHambreAct(){
         return HambreAct;
+    }
+    
+    @Override
+    public int GetEsperanzaVida(){
+        return EsperanzaVida;
     }
     
     @Override

@@ -10,12 +10,23 @@ public class Orca extends Peces {
         InicialN = "O";
         Depredar = 6;
         Especie = 6;
-        AlimentacionMin = 2;
-        AlimentacionMax = 5;
-        Reproduccion = 240;
-        EsperanzaVida = 300;
+        AlimentacionMin = 7;
+        AlimentacionMax = 12;
+        Reproduccion = 10;
+        EsperanzaVida = 30;
         HambreAct = 0;
+        VidaAct = 0;
         
+    }
+    
+    @Override
+    public void VidaA() {
+        this.VidaAct++;
+    }
+    
+    @Override
+    public int GetVidaAct(){
+        return VidaAct;
     }
     
     @Override
@@ -57,6 +68,11 @@ public class Orca extends Peces {
     @Override
     public int GetHambreAct(){
         return HambreAct;
+    }
+    
+    @Override
+    public int GetEsperanzaVida(){
+        return EsperanzaVida;
     }
     
     @Override
