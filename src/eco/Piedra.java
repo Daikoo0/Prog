@@ -14,7 +14,7 @@ public class Piedra extends Peces {
         AlimentacionMax = 0;
         Reproduccion = 0;
         EsperanzaVida = 0;
-        
+        HambreAct = 0;
         
     }
     
@@ -42,6 +42,26 @@ public class Piedra extends Peces {
     @Override
     public int GetDepredar() {
         return Depredar;
+    }
+    
+    @Override
+    public int GetAlimentacionMin(){
+        return AlimentacionMin;
+    }
+    
+    @Override
+    public int GetHambreAct(){
+        return HambreAct;
+    }
+    
+    @Override
+    public void DarHambre(){
+        this.HambreAct++;
+    }
+    
+    @Override
+    public void RestHambre(){
+        this.HambreAct = 0;
     }
     
 }

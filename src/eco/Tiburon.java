@@ -8,11 +8,11 @@ public class Tiburon extends Peces{
         InicialN = "T";
         Depredar = 5;
         Especie = 5;
-        AlimentacionMin = 15;
+        AlimentacionMin = 2;
         AlimentacionMax = 25;
         Reproduccion = 360;
         EsperanzaVida = 480;
-        
+        HambreAct = 0;
         
     }
     
@@ -39,5 +39,25 @@ public class Tiburon extends Peces{
     @Override
     public int GetDepredar() {
         return Depredar;
+    }
+    
+    @Override
+    public int GetAlimentacionMin(){
+        return AlimentacionMin;
+    }
+    
+    @Override
+    public int GetHambreAct(){
+        return HambreAct;
+    }
+    
+    @Override
+    public void DarHambre(){
+        this.HambreAct++;
+    }
+    
+    @Override
+    public void RestHambre(){
+        this.HambreAct = 0;
     }
 }

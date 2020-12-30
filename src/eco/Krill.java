@@ -8,11 +8,11 @@ public class Krill extends Peces {
         InicialN = "K";
         Depredar = 1;
         Especie = 1;
-        AlimentacionMin = 6;
+        AlimentacionMin = 2;
         AlimentacionMax = 35;
         Reproduccion = 180;
         EsperanzaVida = 360;
-        
+        HambreAct = 0;
         
     }
     
@@ -41,4 +41,25 @@ public class Krill extends Peces {
     public int GetDepredar() {
         return Depredar;
     }
+    
+    @Override
+    public int GetAlimentacionMin(){
+        return AlimentacionMin;
+    }
+    
+    @Override
+    public int GetHambreAct(){
+        return HambreAct;
+    }
+    
+    @Override
+    public void DarHambre(){
+        this.HambreAct++;
+    }
+    
+    @Override
+    public void RestHambre(){
+        this.HambreAct = 0;
+    }
+    
 }
