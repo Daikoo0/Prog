@@ -8,8 +8,8 @@ public class Awa extends Peces{
         InicialN = "n";
         Depredar = 0;
         Especie = 0;
-        AlimentacionMin = 0;
-        AlimentacionMax = 0;
+        AlimentacionMin = 99999;
+        AlimentacionMax = 99999;
         Reproduccion = 0;
         EsperanzaVida = 0;
         HambreAct = 0;
@@ -55,6 +55,11 @@ public class Awa extends Peces{
     @Override
     public void DarHambre(){
         this.HambreAct++;
+    }
+    
+    @Override
+    public int GetAlimentacionMax(){
+        return AlimentacionMax;
     }
     
     @Override

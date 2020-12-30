@@ -42,6 +42,11 @@ public class Tiburon extends Peces{
     }
     
     @Override
+    public int GetAlimentacionMax(){
+        return AlimentacionMax;
+    }
+    
+    @Override
     public int GetAlimentacionMin(){
         return AlimentacionMin;
     }

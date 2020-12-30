@@ -38,6 +38,11 @@ public class Pulpo extends Peces{
     }
     
     @Override
+    public int GetAlimentacionMax(){
+        return AlimentacionMax;
+    }
+    
+    @Override
     public int GetDepredar() {
         return Depredar;
     }

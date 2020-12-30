@@ -8,8 +8,8 @@ public class Salmon extends Peces{
         InicialN = "S";
         Depredar = 2;
         Especie = 2;
-        AlimentacionMin = 2;
-        AlimentacionMax = 35;
+        AlimentacionMin = 5;
+        AlimentacionMax = 12;
         Reproduccion = 180;
         EsperanzaVida = 360;
         HambreAct = 0;
@@ -35,6 +35,11 @@ public class Salmon extends Peces{
     @Override
     public String GetNombre(){
         return Nombre;
+    }
+    
+    @Override
+    public int GetAlimentacionMax(){
+        return AlimentacionMax;
     }
     
     @Override

@@ -11,7 +11,7 @@ public class Orca extends Peces {
         Depredar = 6;
         Especie = 6;
         AlimentacionMin = 2;
-        AlimentacionMax = 30;
+        AlimentacionMax = 5;
         Reproduccion = 240;
         EsperanzaVida = 300;
         HambreAct = 0;
@@ -42,6 +42,11 @@ public class Orca extends Peces {
     @Override
     public String GetNombre(){
         return Nombre;
+    }
+    
+    @Override
+    public int GetAlimentacionMax(){
+        return AlimentacionMax;
     }
     
     @Override

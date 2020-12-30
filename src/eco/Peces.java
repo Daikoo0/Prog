@@ -24,6 +24,7 @@ public abstract class Peces {
     public abstract String GetNombre();
     public abstract int GetDepredar();
     public abstract int GetAlimentacionMin();
+    public abstract int GetAlimentacionMax();
     public abstract int GetHambreAct();
        
 }
