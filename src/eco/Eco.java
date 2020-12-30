@@ -30,8 +30,7 @@ public class Eco {
         
         valores = new int[filas][columnas];
         
-        LlenarMatriz();
-        
+        LlenarMatriz();        
     }
     
     private void LlenarMatriz(){
