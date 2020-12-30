@@ -51,6 +51,7 @@ public class Ventana extends javax.swing.JFrame {
         ImgSalmon.setVisible(false);
         ImgKrill.setVisible(false);
         Piedrita.setVisible(false);
+        Awita.setVisible(false);
         
         
            
@@ -96,6 +97,7 @@ public class Ventana extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        Awita = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -300,6 +302,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        Awita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Awa.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -321,7 +325,9 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(ImgKrill)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Piedrita)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Awita)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 442, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -378,6 +384,7 @@ public class Ventana extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Awita, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Piedrita)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(ImgOrca)
@@ -747,6 +754,7 @@ public class Ventana extends javax.swing.JFrame {
                     etiquetas[i][j].setIcon(ImgKrill.getIcon());
                     peces[i][j] = new Krill();
                 } else if (etiquetas[i][j].getText().equals("0")) {
+                    etiquetas[i][j].setIcon(Awita.getIcon());
                     peces[i][j] = new Awa();
                 } else if (etiquetas[i][j].getText().equals("7")) {
                     etiquetas[i][j].setIcon(Piedrita.getIcon());
@@ -824,7 +832,10 @@ public class Ventana extends javax.swing.JFrame {
                     etiquetas[i][j].setIcon(ImgKrill.getIcon());
                     
                 } else if (NombrePez == "Piedra") {
-                    etiquetas[i][j].setIcon(Piedrita.getIcon());    
+                    etiquetas[i][j].setIcon(Piedrita.getIcon());
+                    
+                } else if (NombrePez == "Awa"){
+                    etiquetas[i][j].setIcon(Awita.getIcon());
                 }
                 
                 etiquetas[i][j].setText("");
@@ -927,11 +938,8 @@ public class Ventana extends javax.swing.JFrame {
                             if(xd == 0){
                                 
                                 if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal2){
-                                
-                                    System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+ peces[x][y+1].GetNombre());
-                                    peces[x][y].RestHambre();
-                                    peces[x][y+1] = peces[x][y];
-                                    peces[x][y] = new Awa();
+                                    
+                                    Almorzar3(x, y, xd);
                                                                 
                                 }   
                                 
@@ -949,11 +957,8 @@ public class Ventana extends javax.swing.JFrame {
                                 
                                 //SI SE PUEDE COMER AL ANIMAL
                                 if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal1){
-
-                                    System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+ peces[x][y-1].GetNombre());
-                                    peces[x][y].RestHambre();
-                                    peces[x][y-1] = peces[x][y];
-                                    peces[x][y] = new Awa();
+                                    
+                                    Almorzar3(x, y, xd);
 
                                 }
                                 
@@ -980,11 +985,8 @@ public class Ventana extends javax.swing.JFrame {
                             
                             //SI SE PUEDE COMER AL ANIMAL
                             if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal2){
-
-                                System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x+1][y].GetNombre());
-                                peces[x][y].RestHambre();
-                                peces[x+1][y] = peces[x][y];
-                                peces[x][y] = new Awa();
+                                
+                                Almorzar2(x,y);
 
                             }
                             
@@ -1008,10 +1010,7 @@ public class Ventana extends javax.swing.JFrame {
                             //SI SE PUEDE COMER AL ANIMAL
                             if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal1){
                                 
-                                System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x-1][y].GetNombre());
-                                peces[x][y].RestHambre();
-                                peces[x-1][y] = peces[x][y];
-                                peces[x][y] = new Awa();
+                                Almorzar2(x,y);
                                                                 
                             }
                             
@@ -1038,12 +1037,9 @@ public class Ventana extends javax.swing.JFrame {
                                 
                                 //SI SE PUEDE COMER AL ANIMAL
                                 if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal2){
-
-                                    System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x+1][y].GetNombre());
-                                    peces[x][y].RestHambre();
-                                    peces[x+1][y] = peces[x][y];
-                                    peces[x][y] = new Awa();
-
+                                    
+                                    Almorzar4(x, y, xd);
+   
                                 }
                                 
                                 if(animal2 == 0){
@@ -1060,11 +1056,8 @@ public class Ventana extends javax.swing.JFrame {
                                 
                                 //SI SE PUEDE COMER AL ANIMAL
                                 if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal1){
-
-                                    System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+ peces[x-1][y].GetNombre());
-                                    peces[x][y].RestHambre();
-                                    peces[x-1][y] = peces[x][y];
-                                    peces[x][y] = new Awa();
+                                    
+                                    Almorzar4(x, y, xd);
 
                                 }
                                 
@@ -1089,33 +1082,84 @@ public class Ventana extends javax.swing.JFrame {
         }
         System.out.println("////////////////////////////////////");
         this.repaint();
- 
-        
+         
     }
-    
+     
     public void Almorzar(int x, int y){
         
+        //LATERAL IZQUIERDO
         if(y == 0){
-            System.out.println(peces[x][y].GetNombre()+" Se almorzo a un pescao "+peces[x][y+1].GetNombre());
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y+1].GetNombre());
             peces[x][y].RestHambre();
             peces[x][y+1] = peces[x][y];
             peces[x][y] = new Awa();
-            
-        }else if(y == anchoTablero -1){
-            
+
+        //LATERAL DERECHO    
+        }else if(y == anchoTablero-1){
             System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y-1].GetNombre());
             peces[x][y].RestHambre();
             peces[x][y-1] = peces[x][y];
             peces[x][y] = new Awa();
             
-        }else{
+        }
+    }
+    
+    public void Almorzar2(int x, int y){
         
-            
-        
+        //SUPERIOR EN CIMA
+	if(x == 0){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x+1][y].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x+1][y] = peces[x][y];
+            peces[x][y] = new Awa();
+	
+	//INFERIOR ABAJO
+        }else if(x == altoTablero-1){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x-1][y].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x-1][y] = peces[x][y];
+            peces[x][y] = new Awa();
         }
         
     }
     
+    public void Almorzar3(int x, int y, int xd){
+ 
+	//HORIZONTAL DERECHA	
+        if(xd == 0){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y+1].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x][y+1] = peces[x][y];
+            peces[x][y] = new Awa();
+
+        //HORIZONTAL IZQUIERDA
+        }else if( xd == 1){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y-1].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x][y-1] = peces[x][y];
+            peces[x][y] = new Awa();
+        }        
+    } 
+    
+    public void Almorzar4(int x, int y, int xd){
+        
+        //Vertical Arriba
+        if(xd == 0){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x+1][y].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x+1][y] = peces[x][y];
+            peces[x][y] = new Awa();
+
+	//VERTICAL ABAJO
+        }else if( xd == 1){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x-1][y].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x-1][y] = peces[x][y];
+            peces[x][y] = new Awa();
+        }  
+    }
+        
+
     
     public void Funcion(){
         //boolean si = true; 
@@ -1158,6 +1202,7 @@ public class Ventana extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Awita;
     private javax.swing.JLabel ImgKrill;
     private javax.swing.JLabel ImgLoboMarino;
     private javax.swing.JLabel ImgOrca;
