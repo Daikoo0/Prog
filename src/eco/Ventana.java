@@ -877,10 +877,7 @@ public class Ventana extends javax.swing.JFrame {
                             //SI SE PUEDE COMER AL ANIMAL
                             if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal2){
                                 
-                                System.out.println(peces[x][y].GetNombre()+" Se almorzo a un pescao "+peces[x][y+1].GetNombre());
-                                peces[x][y].RestHambre();
-                                peces[x][y+1] = peces[x][y];
-                                peces[x][y] = new Awa();
+                                Almorzar(x,y);
                                                                 
                             }
                             
@@ -903,10 +900,7 @@ public class Ventana extends javax.swing.JFrame {
                             //SI SE PUEDE COMER AL ANIMAL
                             if(peces[x][y].GetAlimentacionMin() <= peces[x][y].GetHambreAct() && animalAct > animal1){
                                 
-                                System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y-1].GetNombre());
-                                peces[x][y].RestHambre();
-                                peces[x][y-1] = peces[x][y];
-                                peces[x][y] = new Awa();
+                                Almorzar(x,y);
                                                                 
                             }
                             
@@ -1095,11 +1089,34 @@ public class Ventana extends javax.swing.JFrame {
         }
         System.out.println("////////////////////////////////////");
         this.repaint();
-    }
-    
-    public void Almorzar(){
+ 
         
     }
+    
+    public void Almorzar(int x, int y){
+        
+        if(y == 0){
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a un pescao "+peces[x][y+1].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x][y+1] = peces[x][y];
+            peces[x][y] = new Awa();
+            
+        }else if(y == anchoTablero -1){
+            
+            System.out.println(peces[x][y].GetNombre()+" Se almorzo a "+peces[x][y-1].GetNombre());
+            peces[x][y].RestHambre();
+            peces[x][y-1] = peces[x][y];
+            peces[x][y] = new Awa();
+            
+        }else{
+        
+            
+        
+        }
+        
+    }
+    
+    
     public void Funcion(){
         //boolean si = true; 
         int cont = 0;
