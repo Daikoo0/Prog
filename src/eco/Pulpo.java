@@ -16,7 +16,15 @@ public class Pulpo extends Peces{
         VidaAct = 0;
         ReproduccionAct = 0;
     }
-     @Override
+    @Override
+    public int GetReproduccionAct(){
+        return ReproduccionAct;
+       }
+    @Override
+    public int GetReproduccion(){
+        return Reproduccion;
+       }
+    @Override
     public void DarReproAct(){
         this.ReproduccionAct++;
     }

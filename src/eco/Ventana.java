@@ -1124,7 +1124,7 @@ public class Ventana extends javax.swing.JFrame {
             peces[x][y].RestHambre();
             peces[x][y-1] = peces[x][y];
             peces[x][y] = new Awa();
-            
+            Reproducir();
         }
     }
     
@@ -1224,7 +1224,12 @@ public class Ventana extends javax.swing.JFrame {
         }
                 
     }
-    
+    public void Reproducir(){
+        if(peces[x][y].GetReproduccionAct() >= peces[x][y].GetReproduccion() ){
+        
+        }
+           
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Awita;
     private javax.swing.JLabel ImgKrill;

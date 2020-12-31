@@ -19,6 +19,14 @@ public class Piedra extends Peces {
         ReproduccionAct = 0;
     }
     @Override
+    public int GetReproduccionAct(){
+        return ReproduccionAct;
+       }
+    @Override
+    public int GetReproduccion(){
+        return Reproduccion;
+       }
+    @Override
     public void DarReproAct(){
         this.ReproduccionAct++;
     }

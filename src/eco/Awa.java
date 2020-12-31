@@ -17,6 +17,10 @@ public class Awa extends Peces{
         ReproduccionAct = 0;
     }
     @Override
+    public int GetReproduccionAct(){
+        return ReproduccionAct;
+       }
+    @Override
     public void DarReproAct(){
         this.ReproduccionAct++;
     }
@@ -85,4 +89,8 @@ public class Awa extends Peces{
     public void RestHambre(){
         this.HambreAct = 0;
     }
+    @Override
+    public int GetReproduccion(){
+        return Reproduccion;
+       }
 }

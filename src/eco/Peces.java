@@ -25,6 +25,7 @@ public abstract class Peces {
     public abstract void VidaA();
     public abstract void DarReproAct();
     
+    
     public abstract String GetNombre();
     public abstract int GetDepredar();
     public abstract int GetVidaAct();
@@ -32,5 +33,7 @@ public abstract class Peces {
     public abstract int GetAlimentacionMax();
     public abstract int GetEsperanzaVida();
     public abstract int GetHambreAct();
+    public abstract int GetReproduccion();
+    public abstract int GetReproduccionAct();
        
 }

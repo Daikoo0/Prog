@@ -84,4 +84,12 @@ public class Tiburon extends Peces{
     public void RestHambre(){
         this.HambreAct = 0;
     }
+    @Override
+    public int GetReproduccion(){
+        return Reproduccion;
+       }
+    @Override
+    public int GetReproduccionAct(){
+        return ReproduccionAct;
+       }
 }
