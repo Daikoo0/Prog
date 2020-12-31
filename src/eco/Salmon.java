@@ -14,9 +14,12 @@ public class Salmon extends Peces{
         EsperanzaVida = 30;
         HambreAct = 0;
         VidaAct = 0;
-        
+        ReproduccionAct = 0;
     }
-    
+     @Override
+    public void DarReproAct(){
+        this.ReproduccionAct++;
+    }
     @Override
     public void VidaA() {
         this.VidaAct++;

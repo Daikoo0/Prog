@@ -1,6 +1,6 @@
 package eco;
 
-import java.util.Random;
+
 
 public class Orca extends Peces {
     
@@ -16,7 +16,7 @@ public class Orca extends Peces {
         EsperanzaVida = 30;
         HambreAct = 0;
         VidaAct = 0;
-        
+        ReproduccionAct = 0;
     }
     
     @Override
@@ -83,5 +83,9 @@ public class Orca extends Peces {
     @Override
     public void RestHambre(){
         this.HambreAct = 0;
+    }
+    @Override
+    public void DarReproAct(){
+        this.ReproduccionAct++;
     }
 }

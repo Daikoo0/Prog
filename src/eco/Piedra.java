@@ -12,13 +12,16 @@ public class Piedra extends Peces {
         Especie = 0;
         AlimentacionMin = 99999;
         AlimentacionMax = 99999;
-        Reproduccion = 0;
+        Reproduccion = 99999;
         EsperanzaVida = 99999;
         HambreAct = 0;
         VidaAct = 0;
-        
+        ReproduccionAct = 0;
     }
-    
+    @Override
+    public void DarReproAct(){
+        this.ReproduccionAct++;
+    }
     @Override
     public void VidaA() {
         this.VidaAct++;
